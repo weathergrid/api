@@ -24,8 +24,7 @@ $app = new Laravel\Lumen\Application(
 );
 
 /*
-  Enable facades and Eloquent.
- */
+  Enable facades and Eloquent. 
  */
 $app->withFacades();
 $app->withEloquent();

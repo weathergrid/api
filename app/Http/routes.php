@@ -11,6 +11,16 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->version();
+// Define the v1 namespace and prefixes
+$v1 = ['prefix' => 'v1', 'namespace' => ns('v1')];
+
+$app->group($v1, function () use ($app) {
+
+	// Well, lumen doesn't allow route group nesting, which is kind of annoying.
+	// Therefore, old school grouping it is.
+	// I'd make a pull request but I'm too lazy for that, besides, I'm on a deadline.	
+	
+	// Begin Status routes.
+	$app->get('status/ping', 'StatusController@ping');
+
 });

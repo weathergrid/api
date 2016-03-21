@@ -1,5 +1,5 @@
 # API
-[![Build Status](https://travis-ci.org/weathergrid/api.svg?branch=master)](https://travis-ci.org/weathergrid/api)
+[![Build Status](https://travis-ci.org/weathergrid/api.svg?branch=develop)](https://travis-ci.org/weathergrid/api)
 
 Backend for the grid. Written in Laravel Lumen.
 

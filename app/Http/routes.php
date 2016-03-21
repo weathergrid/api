@@ -23,4 +23,9 @@ $app->group($v1, function () use ($app) {
 	// Begin Status routes.
 	$app->get('status/ping', 'StatusController@ping');
 
+	// Begin NodesController routes
+	$app->get('nodes/list/all', "NodesListController@all");
+	// $app->get('nodes/list/online', "NodesListController@all");
+	// $app->get('nodes/list/region', "NodesListController@all");
+
 });

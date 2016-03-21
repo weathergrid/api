@@ -15,5 +15,6 @@ class StatusTest extends TestCase
             ->seeJson([
                 'pong' => true
         ]);
+        $this->assertResponseOk();
     }
 }

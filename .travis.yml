@@ -8,7 +8,6 @@ php:
   - nightly
 
 before_install:
-  - pip install codecov
   - mv .env.travis .env
   - mysql -e "create database IF NOT EXISTS owg_test;" -uroot
   - composer install
@@ -16,4 +15,4 @@ before_install:
   - php artisan db:seed
 
 after_success:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)

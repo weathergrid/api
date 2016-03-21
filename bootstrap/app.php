@@ -95,6 +95,18 @@ $app->singleton(
 |
 */
 
+/**
+ * Hackish function to prefix the namespace, because lumen simply doesn't do this.
+ * https://github.com/laravel/lumen-docs/pull/95
+ * @param  [string] $str [The namespace to be suffixed]
+ * @return [string]      [Final string with namespace]
+ */
+if(!function_exists('ns')) {
+	function ns($str) {
+		return sprintf('App\Http\Controllers\%s', $str);
+	}
+}
+
 $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
     require __DIR__.'/../app/Http/routes.php';
 });

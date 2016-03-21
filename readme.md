@@ -4,6 +4,8 @@
 Backend for the grid. Written in Laravel Lumen.
 
 ## todo
+[![Issue Count](https://codeclimate.com/github/weathergrid/api/badges/issue_count.svg)](https://codeclimate.com/github/weathergrid/api)
+
 - [ ] API as a whole
 - [ ] Read
 - [ ] Update
@@ -11,5 +13,4 @@ Backend for the grid. Written in Laravel Lumen.
 - [ ] Archival tasker
 - [x] DB
 - [x] Unit testing
-- [ ] [![Issue Count](https://codeclimate.com/github/weathergrid/api/badges/issue_count.svg)](https://codeclimate.com/github/weathergrid/api)
 - [x] Travis CI

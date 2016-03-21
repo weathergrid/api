@@ -14,7 +14,6 @@ class StatusTest extends TestCase
         $this->get('v1/status/ping')
             ->seeJson([
                 'pong' => true
-            ]);
-        $this->assertEquals(200, $response->status());
+        ]);
     }
 }

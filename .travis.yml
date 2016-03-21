@@ -1,4 +1,6 @@
 language: php
+services:
+  - mysql
 php:
   - '5.6'
   - '7.0'
@@ -6,4 +8,8 @@ php:
   - nightly
 
 before_install:
+  - mv .env.travis .env
+  - mysql -e "create database IF NOT EXISTS owg_test;" -uroot
   - composer install
+  - php artisan migrate
+  - php artisan db:seed

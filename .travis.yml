@@ -14,5 +14,6 @@ before_install:
   - php artisan migrate
   - php artisan db:seed
 
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+addons:
+    code_climate:
+        repo_token: 8d02bd491ab893eb31e53cc714124bfd4c6503261e5cd52ca4d48d08741b46e3

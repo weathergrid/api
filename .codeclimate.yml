@@ -23,3 +23,14 @@ ratings:
   - "**.rb"
 exclude_paths:
 - tests/
+- app/Console/
+- app/Events/
+- app/Exceptions/
+- app/Console/
+- app/Jobs/
+- app/Listeners/
+- app/Providers/
+- vendor/
+
+
+

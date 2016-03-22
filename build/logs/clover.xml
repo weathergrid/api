@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1458603760">
-  <project timestamp="1458603760">
+<coverage generated="1458605276">
+  <project timestamp="1458605276">
     <package name="App\Console">
       <file name="/vagrant/api/app/Console/Kernel.php">
         <class name="Kernel" namespace="App\Console">

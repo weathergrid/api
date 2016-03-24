@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\v1;
 
-use App\Nodes;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Ftxrc\Api\ApiController;
-use App\Helpers\Helper;
-use Location\Coordinate;
-use Location\Distance\Vincenty;
+use App\Nodes,
+    App\Http\Controllers\Controller,
+    Ftxrc\Api\ApiController,
+    Illuminate\Http\Request,
+    Location\Coordinate,
+    Location\Distance\Vincenty;
 
 /*
 This is quite messy, but I'm on a deadline, need to get this done.
@@ -85,6 +84,6 @@ class NodesController extends Controller {
      */
     public function near()
     {
-        return Helper::calculateDistance([], []);
+        return true;
     }
 }

@@ -24,8 +24,10 @@ $app->group($v1, function () use ($app) {
 	$app->get('status/ping', 'StatusController@ping');
 
 	// Begin NodesController routes
-	$app->get('nodes/list/all', "NodesListController@all");
-	// $app->get('nodes/list/online', "NodesListController@all");
-	// $app->get('nodes/list/region', "NodesListController@all");
+	$app->get('nodes', "NodesController@list");
+	$app->get('nodes/{id}', "NodesController@id");
+	$app->get('nodes/near', "NodesController@near");
+	// TODO: Implement custom query system.
+	// $app->get('nodes/query' "NodesController@query");
 
 });

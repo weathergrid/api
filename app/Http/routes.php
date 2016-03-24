@@ -25,8 +25,8 @@ $app->group($v1, function () use ($app) {
 
 	// Begin NodesController routes
 	$app->get('nodes', "NodesController@list");
-	$app->get('nodes/{id}', "NodesController@id");
 	$app->get('nodes/near', "NodesController@near");
+	$app->get('nodes/{id}', "NodesController@id");
 	// TODO: Implement custom query system.
 	// $app->get('nodes/query' "NodesController@query");
 

@@ -3,8 +3,7 @@
 use Illuminate\Database\Seeder;
 use \Carbon\Carbon;
 
-class NodesTableSeeder extends Seeder
-{
+class NodesTableSeeder extends Seeder {
     /**
      * Seed the nodes table.
      *

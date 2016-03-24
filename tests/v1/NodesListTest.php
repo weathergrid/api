@@ -12,11 +12,11 @@ class NodesListTest extends TestCase {
     function testAll()
     {
         // Test first seed result.
-        $arr = $this->get('v1/nodes/list/all')->seeJson([
+        $arr = $this->get('v1/nodes')->seeJson([
             'ip' => '127.0.0.1'
         ]);
         // Test first offset seed result.
-        $arr = $this->get('v1/nodes/list/all', ['offset' => 1])->seeJson([
+        $arr = $this->get('v1/nodes', ['offset' => 1])->seeJson([
             'ip' => '8.8.8.8'
         ]);
         $this->assertResponseOk();
@@ -29,12 +29,12 @@ class NodesListTest extends TestCase {
     function testRegion() 
     {
         // IP registered with Puerto Rico region is localhost.
-        $arr = $this->get('v1/nodes/list/region/Puerto_Rico')->seeJson([
+        $arr = $this->get('v1/nodes', ['region' => 'Puerto Rico'])->seeJson([
             'ip' => '127.0.0.1'
         ]);
 
         // Listed Google's PDNS IP :D
-        $arr = $this->get('v1/nodes/list/region/California')->seeJson([
+        $arr = $this->get('v1/nodes', ['region' => 'California'])->seeJson([
             'ip' => '8.8.8.8'
         ]);
     }

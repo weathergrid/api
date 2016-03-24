@@ -5,7 +5,7 @@ use Laravel\Lumen\Testing\DatabaseTransactions;
 class NodesListTest extends TestCase {
 
     /**
-     * Test nodes/list/all page.
+     * Test nodes page.
      * 
      * @return void
      */
@@ -23,7 +23,7 @@ class NodesListTest extends TestCase {
     }
 
     /**
-     * Test nodes/list/region search.
+     * Test region search.
      * @return void
      */
     function testRegion() 
@@ -36,6 +36,19 @@ class NodesListTest extends TestCase {
         // Listed Google's PDNS IP :D
         $arr = $this->get('v1/nodes', ['region' => 'California'])->seeJson([
             'ip' => '8.8.8.8'
+        ]);
+    }
+
+    /**
+     * Test node id search.
+     * @return void
+     */
+    function testById() 
+    {
+        // IP registered with Puerto Rico region is localhost.
+        // ID is 1.
+        $arr = $this->get('v1/nodes/1')->seeJson([
+            'ip' => '127.0.0.1'
         ]);
     }
     

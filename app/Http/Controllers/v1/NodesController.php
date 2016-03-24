@@ -8,7 +8,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Ftxrc\Api\ApiController;
 use App\Helpers\Helper;
-
+use Location\Coordinate;
+use Location\Distance\Vincenty;
 
 /*
 This is quite messy, but I'm on a deadline, need to get this done.

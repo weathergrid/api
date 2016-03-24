@@ -2,8 +2,7 @@
 namespace App;
 use Illuminate\Database\Eloquent\Model;
 
-class Nodes extends Model
-{
+class Nodes extends Model {
     /**
      * The nodes table.
      *

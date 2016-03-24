@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers\v1;
 
-use App\User;
-use \App\Nodes;
+use App\Nodes;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Ftxrc\Api\ApiController;
@@ -60,22 +59,15 @@ class NodesController extends Controller {
      */
     public function list(Request $request)
     {
-        $this->filters = [
-            'region' => $request->input('region', null),
-            'name' => $request->input('name', null),
-            'ip' => $request->input('ip', null)
-        ];
-
-        $this->filters = array_filter($this->filters, function ($v) {
-            return !is_null($v);
-        });
 
         try {
             // use filters provided
             $data =  Nodes::limit($this->limit)->offset($this->offset);
 
-            foreach ($this->filters as $filter => $value) {
-                $data->where($filter, $value);
+            foreach(['region', 'name', 'ip'] as $param) {
+                if ($request->has($param)) {
+                    $user->where($param, $request->input($param));
+                }
             }
 
             $data = $data->get();

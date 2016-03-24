@@ -19,13 +19,7 @@
             <directory suffix=".php">app/</directory>
         </whitelist>
         <exclude>
-          <directory suffix=".php">app/Console/</directory>
-          <directory suffix=".php">app/Events/</directory>
-          <directory suffix=".php">app/Exceptions</directory>
-          <directory suffix=".php">app/Jobs</directory>
-          <directory suffix=".php">app/Listeners</directory>
-          <directory suffix=".php">app/Providers</directory>
-          <directory suffix=".php">vendor/</directory>
+
         </exclude>
     </filter>
     <php>

@@ -4,7 +4,6 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Location\Coordinate;
 use Location\Distance\Vincenty;
-use App\Helpers\Log;
 
 class Nodes extends Model {
     /**

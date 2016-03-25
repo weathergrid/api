@@ -5,13 +5,14 @@ namespace App\Http\Controllers\v1;
 use App\Nodes,
     App\Http\Controllers\Controller,
     Ftxrc\Api\ApiController,
-    Illuminate\Http\Request,
     Location\Coordinate,
-    Location\Distance\Vincenty;
+    Illuminate\Http\Request;
 
 /*
 This is quite messy, but I'm on a deadline, need to get this done.
 Refactor imminent!
+
+Considered feature complete.
 
 TODO: Refactoring
  */
@@ -80,10 +81,35 @@ class NodesController extends Controller {
 
     /**
      * Fetch nodes near coordinates given.
-     * @return [type] [description]
+     * @return string JSON result
      */
-    public function near()
+    public function near(Request $request)
     {
-        return true;
+        if ($request->has('region') && $request->has('latitude') && $request->has('longitude'))
+        {
+            $region = $request->input('region');
+            $latitude = $request->input('latitude');
+            $longitude = $request->input('longitude');
+        } 
+        else
+        {
+            return $this->respondServerError('Not enough arguments supplied. Requires: region, latitude, longitude');
+        }
+
+        try
+        {
+            $coordinates = new Coordinate($latitude, $longitude);
+            $result = Nodes::getByLatLong($coordinates, $region);
+            // Remove keys from array, this prevents api inconsistencies.
+            return $this->respond(array_values($result));
+        }
+        catch (\InvalidArgumentException $e)
+        {
+            return $this->respondServerError('Wrong latitude and longitude.');
+        }
+        //catch (\Exception $e)
+        //{
+        //   return $this->respondServerError("Unknown exception caught, could not retrieve value from database.");
+       // }
     }
 }

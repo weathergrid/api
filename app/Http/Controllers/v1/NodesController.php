@@ -53,11 +53,11 @@ class NodesController extends Controller {
     }
 
     /**
-     * List nodes.
+     * Get a list of nodes.
      * 
      * @return [string] [JSON containing list of nodes, if sorted.]
      */
-    public function list(Request $request)
+    public function get(Request $request)
     {
 
         try {

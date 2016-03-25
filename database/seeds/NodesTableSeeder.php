@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use \Carbon\Carbon;
 
-class NodesTableSeeder extends Seeder
-{
+class NodesTableSeeder extends Seeder {
     /**
      * Seed the nodes table.
      *
@@ -20,7 +20,9 @@ class NodesTableSeeder extends Seeder
 	        	'region' => 'Puerto Rico',
 	        	'timezone' => 'Americas/Puerto_Rico',
 	        	'latitude' => '18.4500',
-	        	'longitude' => '66.1000'
+	        	'longitude' => '66.1000',
+	        	'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+	        	'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         	],
         	[
 	        	'ip' => '8.8.8.8',
@@ -30,7 +32,9 @@ class NodesTableSeeder extends Seeder
 	        	'region' => 'California',
 	        	'timezone' => 'America/Los_Angeles',
 	        	'latitude' => '37.3894',
-	        	'longitude' => '122.0819'
+	        	'longitude' => '122.0819',
+	        	'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+	        	'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
         	]
         ]);
     }

@@ -2,8 +2,7 @@
 
 use Laravel\Lumen\Testing\DatabaseTransactions;
 
-class StatusTest extends TestCase
-{
+class StatusTest extends TestCase {
     /**
      * Tests the /status/ping page.
      *
@@ -14,7 +13,7 @@ class StatusTest extends TestCase
         $this->get('v1/status/ping')
             ->seeJson([
                 'pong' => true
-            ]);
-        $this->assertEquals(200, $response->status());
+        ]);
+        $this->assertResponseOk();
     }
 }

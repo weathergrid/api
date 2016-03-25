@@ -51,5 +51,16 @@ class NodesListTest extends TestCase {
             'ip' => '127.0.0.1'
         ]);
     }
-    
+
+
+    /**
+     * Test latitude and longitude with preser values for seeded nodes.
+     * @return void
+     */
+    function testLatLong() 
+    {
+        $arr = $this->get('v1/nodes', ['region' => 'Puerto Rico', 'latitude' => 18.2341200, 'longitude' => -66.0485000])->seeJson([
+            'ip' => '127.0.0.1'
+        ]);
+    }
 }
